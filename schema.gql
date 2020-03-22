@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type FloorsCreateDto {
+  id: ID!
+  films: [ItemType]
+  cab14W: [ItemType]
+}
+
+type ItemType {
+  id: Float!
+  name: String!
+  nominal: String!
+  price: Float!
+}
+
+type Query {
+  floors: [FloorsCreateDto!]!
+}
