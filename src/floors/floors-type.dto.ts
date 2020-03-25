@@ -1,6 +1,6 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
-@ObjectType({ isAbstract: true })
+@ObjectType()
 export class ItemType {
   @Field(() => Number)
   id?: number
@@ -16,13 +16,19 @@ export class ItemType {
 }
 
 @ObjectType()
-export class FloorsCreateDto {
+export class FloorsType {
+  @Field(() => [ItemType])
+  films?: ItemType[];
+
+  @Field(() => [ItemType])
+  cab14W?: ItemType[];
+}
+
+@ObjectType()
+export class EntityQuery {
   @Field(() => ID)
   id?: string
 
-  @Field(() => [ItemType], { nullable: "itemsAndList", name: "films" })
-  films?: [ItemType];
-
-  @Field(() => [ItemType], { nullable: "itemsAndList", name: "cab14W" })
-  cab14W?: [ItemType];
+  @Field(() => FloorsType)
+  warmehausFloors: FloorsType
 }

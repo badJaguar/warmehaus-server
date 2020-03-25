@@ -1,15 +1,21 @@
-import { Query, Resolver } from "@nestjs/graphql";
-import { FloorsCreateDto } from "../floors-type.dto";
+import { Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
+import { EntityQuery, FloorsType } from "../floors-type.dto";
 import { FloorsService } from "../floors.service";
 // import { FloorsInput } from "../inputs/floors-input";
 
-@Resolver()
+@Resolver(() => FloorsType)
 export class FloorsResolver {
   constructor(private itemService: FloorsService) { }
 
-  @Query(() => [FloorsCreateDto])
-  async floors(): Promise<FloorsCreateDto[]> {
-    return this.itemService.findAll();
+  @Query(() => FloorsType)
+  async floors(): Promise<EntityQuery> {
+    const result = this.itemService.findOne();
+    return result;
+  }
+
+  @ResolveField('warmehausFloors', () => FloorsType)
+  async warmehausFloors(@Parent() entity: EntityQuery): Promise<FloorsType> {
+    return entity.warmehausFloors
   }
 
   // @Mutation(() => FloorsType)

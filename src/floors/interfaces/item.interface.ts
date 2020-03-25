@@ -1,14 +1,19 @@
 import { Document } from 'mongoose';
 
-export interface Item {
+export interface IFloorItem extends Document {
   readonly id?: number;
   readonly name: string;
   readonly nominal: string;
   readonly price: number;
 }
 
-export interface Floors extends Document {
+export interface IRootFloors extends Document {
   readonly id?: string;
-  readonly cab14W?: [Item];
-  readonly films?: [Item];
+  readonly warmehausFloors: IFloors
 }
+
+export interface IFloors extends Document {
+  readonly cab14W?: IFloorItem[];
+  readonly films?: IFloorItem[];
+}
+
