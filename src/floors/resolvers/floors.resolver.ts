@@ -1,22 +1,22 @@
-import { Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
-import { EntityQuery, FloorsType } from "../floors-type.dto";
+import { Query, Resolver } from "@nestjs/graphql";
+import { EntityQuery } from "../floors-type.dto";
 import { FloorsService } from "../floors.service";
 // import { FloorsInput } from "../inputs/floors-input";
 
-@Resolver(() => FloorsType)
+@Resolver()
 export class FloorsResolver {
   constructor(private itemService: FloorsService) { }
 
-  @Query(() => FloorsType)
+  @Query(() => EntityQuery)
   async floors(): Promise<EntityQuery> {
     const result = this.itemService.findOne();
     return result;
   }
 
-  @ResolveField('warmehausFloors', () => FloorsType)
-  async warmehausFloors(@Parent() entity: EntityQuery): Promise<FloorsType> {
-    return entity.warmehausFloors
-  }
+  // @ResolveField('warmehausFloors', () => FloorsType)
+  // async warmehausFloors(@Parent() entity: EntityQuery): Promise<FloorsType> {
+  //   return entity.warmehausFloors
+  // }
 
   // @Mutation(() => FloorsType)
   // async createFilm(@Args('input') input: FloorsInput): Promise<FloorsInput> {
