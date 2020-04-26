@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface IFloorItem extends Document {
+export interface IFloorItem {
   readonly id?: number;
   readonly name: string;
   readonly nominal: string;

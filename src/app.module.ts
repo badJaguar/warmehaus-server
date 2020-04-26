@@ -13,7 +13,5 @@ require('dotenv').config();
     }),
     MongooseModule.forRoot(process.env.DB_CONNECTION_STRING)
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule { }

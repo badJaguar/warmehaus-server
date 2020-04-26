@@ -8,7 +8,7 @@ import { FloorsResolver } from '../floors/resolvers/floors.resolver';
 export const floors = propertyOf<typeof WarmehausKindType>("Floors");
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: floors, schema: FloorsSchema, collection: "kinds" }])],
+  imports: [MongooseModule.forFeature([{ name: floors, schema: FloorsSchema, collection: "kinds_s" }])],
   providers: [FloorsResolver, FloorsService],
 })
 export class FloorsModule { }

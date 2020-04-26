@@ -13,6 +13,14 @@ export class FloorsResolver {
     return result;
   }
 
+  // @Mutation(() => EntityQuery)
+  // async updateItem(
+  //   @Args('id') id: string,
+  //   @Args('type') type: ItemInput,
+  // ): Promise<EntityQuery> {
+  //   return this.itemService.bulkCreate(id, type);
+  // }
+
   // @ResolveField('warmehausFloors', () => FloorsType)
   // async warmehausFloors(@Parent() entity: EntityQuery): Promise<FloorsType> {
   //   return entity.warmehausFloors
@@ -23,13 +31,6 @@ export class FloorsResolver {
   //   return this.itemService.create(input);
   // }
 
-  // @Mutation(() => FloorsType)
-  // async updateFilm(
-  //   @Args('id') id: string,
-  //   @Args('input') input: FloorsInput,
-  // ): Promise<FloorsInput> {
-  //   return this.itemService.update(id, input);
-  // }
 
   // @Mutation(() => FloorsType)
   // async deleteFilm(@Args('id') id: string): Promise<FloorsInput> {

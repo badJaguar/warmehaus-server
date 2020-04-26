@@ -1,7 +1,11 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, InputType, Int } from '@nestjs/graphql';
 
 @InputType()
 export class ItemInput {
+
+  @Field(() => Int)
+  readonly id: number;
+
   @Field(() => String)
   readonly name: string;
 
@@ -19,4 +23,9 @@ export class FloorsInput {
 
   @Field(() => [ItemInput], { nullable: "itemsAndList" })
   readonly cab14W?: ItemInput[];
+}
+@InputType()
+export class EntityInput {
+  @Field(() => FloorsInput)
+  warmehausFloors: FloorsInput
 }

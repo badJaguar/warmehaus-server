@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import { WarmehausKindType } from '../enums/warmehaus.enum';
 import { EntityQuery } from './floors-type.dto';
 // import { FloorsInput } from './inputs/floors-input';
-import { IRootFloors } from './interfaces/item.interface';
+import { IFloors, IRootFloors } from './interfaces/item.interface';
 
 const floors = WarmehausKindType[WarmehausKindType.Floors]
 
@@ -20,6 +20,16 @@ export class FloorsService {
   async findOne(): Promise<EntityQuery> {
     return await this.itemModel.findOne();
   }
+
+  async bulkCreate(id: string, createFloorDto, warmehausFloors: IFloors): Promise<EntityQuery> {
+    const createdFloor = await this.itemModel.findOne({ warmehausFloors })
+    return createdFloor.save()
+  }
+
+  // async bulkCreate(createFloorDto: EntityQuery): Promise<EntityQuery> {
+  //   const createdFloor = new this.itemModel(createFloorDto);
+  //   return createdFloor.save();
+  // }
   // async findOneById(id: string): Promise<FloorsType> {
   //   const res = await this.itemModel.findById(id);
   //   console.log(res)
