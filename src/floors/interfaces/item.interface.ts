@@ -14,6 +14,7 @@ export interface IRootFloors extends Document {
 
 export interface IFloors extends Document {
   readonly cab14W?: IFloorItem[];
+  readonly cab20W?: IFloorItem[];
   readonly films?: IFloorItem[];
 }
 

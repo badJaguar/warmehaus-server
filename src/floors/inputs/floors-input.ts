@@ -23,6 +23,9 @@ export class FloorsInput {
 
   @Field(() => [ItemInput], { nullable: "itemsAndList" })
   readonly cab14W?: ItemInput[];
+
+  @Field(() => [ItemInput], { nullable: "itemsAndList" })
+  readonly cab20W?: ItemInput[];
 }
 @InputType()
 export class EntityInput {

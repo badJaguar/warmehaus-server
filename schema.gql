@@ -10,6 +10,7 @@ type EntityQuery {
 type FloorsType {
   films: [ItemType!]!
   cab14W: [ItemType!]!
+  cab20W: [ItemType!]!
 }
 
 type ItemType {

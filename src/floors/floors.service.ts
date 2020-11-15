@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { WarmehausKindType } from '../enums/warmehaus.enum';
-import { EntityQuery } from './floors-type.dto';
+import { EntityQuery, FloorsType } from './floors-type.dto';
 // import { FloorsInput } from './inputs/floors-input';
 import { IFloors, IRootFloors } from './interfaces/item.interface';
 
@@ -26,15 +26,11 @@ export class FloorsService {
     return createdFloor.save()
   }
 
-  // async bulkCreate(createFloorDto: EntityQuery): Promise<EntityQuery> {
-  //   const createdFloor = new this.itemModel(createFloorDto);
-  //   return createdFloor.save();
-  // }
-  // async findOneById(id: string): Promise<FloorsType> {
-  //   const res = await this.itemModel.findById(id);
-  //   console.log(res)
-  //   return res
-  // }
+//   async findOneById(id: string) {
+//     const res = await this.itemModel.findById(id);
+//     console.log(res)
+//     return res
+//   }
   // async delete(id: string): Promise<FloorsType> {
   //   return await this.itemModel.findByIdAndRemove(id);
   // }
