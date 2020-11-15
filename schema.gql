@@ -11,6 +11,8 @@ type FloorsType {
   films: [ItemType!]!
   cab14W: [ItemType!]!
   cab20W: [ItemType!]!
+  mat160W: [ItemType!]!
+  mat200W: [ItemType!]!
 }
 
 type ItemType {

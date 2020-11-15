@@ -25,6 +25,12 @@ export class FloorsType {
 
   @Field(() => [ItemType])
   cab20W?: ItemType[];
+
+  @Field(() => [ItemType])
+  mat160W?: ItemType[];
+
+  @Field(() => [ItemType])
+  mat200W?: ItemType[];
 }
 
 @ObjectType()
